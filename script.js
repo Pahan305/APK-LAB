@@ -1,20 +1,37 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const btn = document.getElementById('downloadBtn');
-  const countdown = document.getElementById('countdown');
-  if (btn && countdown) {
-    let time = 5;
+// script.js
+
+// Download countdown logic
+document.addEventListener("DOMContentLoaded", () => {
+  const countdownText = document.getElementById("countdownText");
+  const downloadBtn = document.getElementById("downloadBtn");
+
+  if (countdownText && downloadBtn) {
+    let seconds = 5;
     const timer = setInterval(() => {
-      time--;
-      countdown.textContent = `Wait ${time} seconds...`;
-      if (time <= 0) {
+      seconds--;
+      countdownText.textContent = `Please wait ${seconds} seconds before downloading...`;
+      if (seconds === 0) {
         clearInterval(timer);
-        countdown.textContent = 'Click below to download:';
-        btn.disabled = false;
+        downloadBtn.disabled = false;
+        countdownText.textContent = "Click below to start downloading.";
+        downloadBtn.onclick = () => {
+          window.location.href = "assets/sample-app.apk"; // change to your real link
+        };
       }
     }, 1000);
   }
+
+  // Search filter (Homepage)
+  const searchInput = document.getElementById("searchInput");
+  const appCards = document.querySelectorAll(".app-card");
+
+  if (searchInput && appCards.length) {
+    searchInput.addEventListener("input", () => {
+      const query = searchInput.value.toLowerCase();
+      appCards.forEach(card => {
+        const name = card.dataset.name.toLowerCase();
+        card.style.display = name.includes(query) ? "block" : "none";
+      });
+    });
+  }
 });
-function startDownload() {
-  alert('Your download will start shortly...');
-  window.location.href = 'https://example.com/sample.apk';
-}
