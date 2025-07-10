@@ -1,37 +1,74 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>APK LAB - Home</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>APK LAB - Download Free Android APKs</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/favicon.ico" />
+  <script defer src="script.js"></script>
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <img src="assets/logo.png" alt="APK LAB Logo">
-      <h1>APK LAB</h1>
+  <header class="main-header">
+    <div class="container header-wrapper">
+      <div class="logo">
+        <img src="assets/logo.png" alt="APK LAB Logo" />
+        <h1>APK LAB</h1>
+      </div>
+      <nav class="top-nav">
+        <input type="text" id="searchInput" placeholder="Search apps..." />
+      </nav>
     </div>
-    <nav>
-      <input type="text" id="search" placeholder="Search APKs...">
-    </nav>
   </header>
-  <main>
-    <section class="trending">
-      <h2>Trending Downloads</h2>
-      <div class="app-list">
-        <div class="app-card">
-          <img src="assets/sample-app.png" alt="Sample App">
+
+  <section class="categories">
+    <div class="container">
+      <h2>Categories</h2>
+      <div class="category-links">
+        <a href="category.html?cat=tools">Tools</a>
+        <a href="category.html?cat=games">Games</a>
+        <a href="category.html?cat=firmware">Firmware</a>
+        <a href="category.html?cat=unlock">Unlock</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="main-content">
+    <div class="container">
+      <h2>Trending Apps</h2>
+      <div class="app-grid" id="appGrid">
+        <div class="app-card" data-name="Sample App">
+          <img src="assets/sample-app.png" alt="Sample App" />
           <h3>Sample App</h3>
-          <p>Version 1.2.3</p>
-          <a href="app.html" class="download-link">View</a>
+          <p>Version 1.0.0</p>
+          <a href="app.html" class="btn-download">Download</a>
+        </div>
+        <div class="app-card" data-name="Game Pro">
+          <img src="assets/sample-app.png" alt="Game Pro" />
+          <h3>Game Pro</h3>
+          <p>Version 2.5.1</p>
+          <a href="app.html" class="btn-download">Download</a>
+        </div>
+        <div class="app-card" data-name="Fast VPN">
+          <img src="assets/sample-app.png" alt="Fast VPN" />
+          <h3>Fast VPN</h3>
+          <p>Version 3.0</p>
+          <a href="app.html" class="btn-download">Download</a>
         </div>
       </div>
-    </section>
+
+      <div class="ad-slot">
+        <!-- AdSense or banner ad placeholder -->
+        <p>Ad Slot</p>
+      </div>
+    </div>
   </main>
-  <footer>
-    <p>&copy; 2025 APK LAB</p>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 APK LAB. All rights reserved.</p>
+    </div>
   </footer>
 </body>
 </html>
